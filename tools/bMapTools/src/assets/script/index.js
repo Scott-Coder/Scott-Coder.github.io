@@ -7,14 +7,15 @@ define(function(require){
 	require("lib/scrollBars/jquery.mousewheel.min.js");
 	require("lib/scrollBars/jquery.mCustomScrollbar.min.js");
 	require("script/extend.js");
+	require("src/assets/baseData/cityCenter.js");
 	var Base = require("Base");
 	new (Base.extend({
 		onInit : function(option){
-			this.getBaseData();
+			this.goToContainer();
 		},
 		getBaseData : function(){
 			var self = this;
-			S.request({
+			/*S.request({
 				url : "src/assets/baseData/cityCenter.json",
 				success : function(data){
 					if(data){
@@ -22,7 +23,7 @@ define(function(require){
 					}
 					self.goToContainer();
 				}
-			})
+			})*/
 		},
 		goToContainer : function(){
 			this.loadpage({
