@@ -1,0 +1,203 @@
+/*global style*/
+.clearfix {
+    zoom: 1;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.fl {
+    float: left !important;
+}
+
+.fr {
+    float: right !important;
+}
+
+.txt-right {
+    text-align: right;
+}
+
+.text-hide {
+    overflow: hidden;
+    text-indent: -1000px;
+    display: block;
+}
+
+.txt-center {
+    text-align: center;
+}
+
+.center {
+    margin: 0 auto;
+}
+
+.no-mgr {
+    margin-right: 0!important;
+}
+.no-pd {
+    padding: 0!important;
+}
+.no-mgl {
+    margin-left: 0!important;
+}
+.no-mgb{
+    margin-bottom:0 !important;
+}
+.no-mg{
+    margin:0 !important;
+}
+.hide {
+    display: none!important;
+}
+
+.show {
+    display: block!important;
+}
+
+/* loading Style */
+.pageloader{display:none;height:100%;position:fixed;top:0;left:0;width:100%;z-index:9999;}
+.pageloaderOverlay{width:100%;height:100%;background:#000;opacity:0.5;}
+.pageloader-content{bottom:0;font-size:12px;height:120px;left:0;margin:auto;position:absolute;right:0;text-align:center;top:0;width:120px;z-index:100;}
+.pageloader-spinner{position:relative;}
+.pageloader .loadingAnimation{-webkit-animation:loadingAnimation 2s infinite ease-in-out;animation:loadingAnimation 2s infinite ease-in-out}
+.pageloader .cube1,.pageloader .cube2,.pageloader .cube3,.pageloader .cube4{background-color:#1F8DD6;width:20px;height:20px;position:absolute;top:0;left:0}
+.pageloader .cube2{-webkit-animation-delay:-.5s;animation-delay:-.5s;background-color:#FBB44C}
+.pageloader .cube3{-webkit-animation-delay:-1s;animation-delay:-1s;background-color:#FC797A}
+.pageloader .cube4{-webkit-animation-delay:-1.5s;animation-delay:-1.5s;background-color:#2ABB9B}
+.pageloader .loading-message{margin-top:76px;position:absolute;top:0;left:0;color:#fff;}
+@-webkit-keyframes loadingAnimation{
+    25% {-webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)}
+    50% {-webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)}
+    75% {-webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)}
+    100% {-webkit-transform: rotate(-360deg)}
+}
+@keyframes loadingAnimation{
+    25% {transform: translateX(42px) rotate(-90deg) scale(0.5);-webkit-transform: translateX(42px) rotate(-90deg) scale(0.5)}
+    50% {transform: translateX(42px) translateY(42px) rotate(-179deg);-webkit-transform: translateX(42px) translateY(42px) rotate(-179deg)}
+    50.1% {transform: translateX(42px) translateY(42px) rotate(-180deg);-webkit-transform: translateX(42px) translateY(42px) rotate(-180deg)}
+    75% {transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);-webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5)}
+    100% {transform: rotate(-360deg);-webkit-transform: rotate(-360deg)}
+}
+
+
+#container{
+    font-family:Tahoma, Helvetica, Arial, "微软雅黑", sans-serif;
+    width:100%;
+    position:absolute;
+    height:100%;
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
+}
+#topBar{
+	width:100%;
+	height:50px;
+	background:#222;
+	border-bottom:1px solid #080808;
+}
+#topBar .systemName{
+	float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+	color:#fff;
+    line-height: 20px;
+}
+#topBar .navList{
+	float:left;
+	padding-left:50px;
+}
+#topBar li{
+	float:left;
+	height:50px;
+	color:#9d9d9d;
+	font-size:14px;
+	line-height:50px;
+	padding:0 15px;
+	margin-left:2px;
+	cursor:pointer;
+}
+#topBar .navList li:hover,#topBar .navList li.active{
+	background: #444;
+    color: #fff;
+}
+#mapContent{
+	position:absolute;
+	top:50px;
+	left:0;
+	bottom:0;
+	right:0;
+}
+#mapContent > .pageContainer{
+	width:100%;
+	height:100%;
+}
+#pageInfo{
+	float:right;
+	height:50px;
+}
+
+/* 坐标拾取器 */
+#getPointSetting{
+	position:absolute;
+	top:0;
+	right:0;
+	bottom:0;
+	background:rgba(0,0,0,0.8);
+	width:300px;
+	height:100%;
+}
+#getPointSetting .mapInfoBar li{
+	float:left;
+	height:50px;
+	color:#9d9d9d;
+	font-size:14px;
+	line-height:50px;
+	padding:0 15px;
+	margin-left:2px;
+	cursor:pointer;
+}
+#getPointSetting .mapInfoBar span{
+	color:#fff;
+}
+#getPointSetting .getPointCitys{
+	width:100%;
+	height:calc(100% - 300px);
+	overflow: auto;
+}
+#cityList{
+	padding:15px;
+}
+#cityList .cityNameList{
+	font-size:12px;
+	font-weight:bold;
+	color:#333;
+	padding-top:15px;
+}
+#cityList li{
+	margin-bottom:10px;
+	overflow:hidden;
+}
+#cityList .cityNameList span{
+	display:inline-block;
+	line-height:25px;
+	padding:0 8px;
+	font-weight:normal;
+	color:#0b87e2;
+	cursor:pointer;
+}
+.provincesName{
+	float:left;
+	width:48px;
+	line-height:25px;
+}
+.provincesCities{
+	float:right;
+	width:calc(100% - 48px);
+}

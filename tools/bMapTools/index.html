@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="renderer" content="webkit"> <!--针对360极速浏览器-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" ><!--针对360普通浏览器，强制使用当前电脑中最高IE版本进行渲染-->
+	<meta name="author" content="sefonsoft.com" />
+	<link rel="stylesheet" href="lib/bootstrap-3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="src/assets/style/reset.css">
+	<link rel="stylesheet" href="src/assets/style/global.css" charset="utf-8"/>
+	<title>百度地图开发工具</title>
+
+</head>
+<body>
+	<script type="text/javascript" src="lib/jquery-1.11.1.min.js"></script>
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=XQgnKCcvY4GRMS5alMXchtXQ76G42SX5"></script>
+	<script type="text/javascript" src="lib/sea-debug.js"></script>
+    <script type="text/javascript">
+	    window.onload = function(){
+	        seajs.use("./main.js",function(){
+				
+			});
+	    }	
+	</script>
+</body>
+</html>

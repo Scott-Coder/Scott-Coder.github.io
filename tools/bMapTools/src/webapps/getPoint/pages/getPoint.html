@@ -1,0 +1,45 @@
+<div id="getPoint" class="pageContainer">
+	
+</div>
+<div class="" id="getPointSetting">
+	<ul class='mapInfoBar'><li>当前城市：<span class='cityName'>成都市<span class='caret'></span></span></li><li>当前层级：<span class='mapZoom'>12级<span class='caret'></span></span></li></ul>
+	<div class="getPointCitys"></div>
+	
+</div>
+<script rel="script">
+    define(function(require){
+        var base = require("Base");
+        return base.extend({
+			onInit : function(options){
+				var self = this;
+				self.getPointMap = new BMap.Map("getPoint");
+				self.getPointMap.centerAndZoom(new BMap.Point(104.067923,30.679943),12);
+				/*this.loadpage({
+					url : "common/pages/cityList.html",
+					$el : $(".getPointCitys"),
+					callback : function(){
+						$(".getPointCitys").mCustomScrollbar();
+					}
+				})*/
+				this.buildBtnEvent();
+			},
+			buildBtnEvent : function(){
+				var self = this;
+				$("#getPointSetting").on("click",".cityName",function(){
+					self.loadDialog({
+						title : "城市列表",
+						url : "common/pages/cityList.html",
+						id : "cityListDialog",
+						width : 600,
+						height : 350,
+						onInit : function(form){
+							$(".cityNameList" , form).find("span").on("click",function(){
+								self.getPointMap.setCurrentCity($(this).data().name); 
+							})
+						}
+					})
+				})
+			}
+		})
+	})
+</script>

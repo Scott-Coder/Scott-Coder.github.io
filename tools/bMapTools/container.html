@@ -1,0 +1,60 @@
+<div id="container">
+	<div id="topBar">
+		<div class="systemName">BMapTools</div>
+		<ul class="navList clearfix">
+			<li rel="getPoint" class="active">坐标拾取器</li>
+			<li rel="createMap">地图生成器</li>
+		</ul>
+		<div id="pageInfo">
+			<!--<ul class='mapInfoBar'><li>当前城市：<span class='cityName'>成都市<span class='caret'></span></span></li><li>当前层级：<span class='mapZoom'>12级</span></li></ul>-->
+		</div>
+	</div>
+	<div id="mapContent"></div>
+</div>
+<div class="pageloader">
+	<div class="pageloaderOverlay"></div>
+	<div class="pageloader-content">
+		<div class="pageloader-spinner">
+			<div class="loadingAnimation cube1"></div>
+			<div class="loadingAnimation cube2"></div>
+			<div class="loadingAnimation cube3"></div>
+			<div class="loadingAnimation cube4"></div>
+			<span class="loading-message">加载中...</span>
+		</div>
+	</div>
+</div>
+<script rel="script">
+    define(function(require){
+        var base = require("Base");
+        return base.extend({
+			onInit : function(options){
+				this.bindBtnEvent();
+				this.openModelPage("getPoint");
+			},
+			bindBtnEvent : function(){
+				var self = this;
+				$("#topBar").on("click",".navList li",function(){
+					var modelType = $(this).attr("rel");
+					$("#topBar .navList").find("li.active").removeClass("active");
+					$(this).addClass("active");
+					self.openModelPage(modelType);
+				})
+			},
+			openModelPage : function(modelType){
+				var self = this;
+				if(!modelType) return;
+				var pageUrl = modelType + "/pages/" + modelType + ".html";
+				
+				S.loadingShow();
+				self.loadpage({
+					title : "城市列表",
+					url : pageUrl,
+					$el : $("#mapContent"),
+					callback : function(page){
+						S.loadingHide();
+					}
+				})
+			}
+		})
+	})
+</script>

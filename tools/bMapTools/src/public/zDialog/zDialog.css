@@ -1,0 +1,181 @@
+.zDialog-wraper,.zDialog-wraper *{
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	outline: 0
+}
+.zDialog-wraper{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+	position:fixed;
+	z-index:500;
+	left:0;
+	top:0;
+}
+.zDialog-overlay{
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+.zDialog-header,.zDialog-footer{
+    font-size:12px;
+}
+.zDialog-header{
+	height:31px;
+	line-height:31px;
+    overflow:hidden;
+    border-bottom:1px solid #ccc;
+	text-align:left;
+}
+.zDialog-header .zDialog-title{
+	padding:0;
+	margin:0;
+	font-weight:bold;
+	padding:0 25px 0 10px;
+	overflow:hidden;
+	position:relative;
+}
+.zDialog-content .zDialog-tools{
+	position:absolute;
+	right:5px;
+	top:0;
+	height:31px;
+	z-index:10
+}
+.zDialog-content .zDialog-tools > span {
+	width:20px;
+	height:30px;
+	background:url(images/tools.png);
+	display:inline-block;
+	cursor:pointer;
+}
+.zDialog-content span.zDialog-close{
+	background-position:0 0;
+}
+.zDialog-content span.zDialog-maximize{
+	background-position:0 -30px;
+}
+.zDialog-content span.zDialog-original{
+	background-position:0 -60px;
+}
+
+.zDialog-content {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	max-width:100%;
+	min-width:190px;
+	background-color: #fff;
+	text-align: center;
+	border-radius: 5px;
+	opacity: 0;
+	filter: alpha(opacity=0);
+	box-shadow:0 0 15px #555;
+	/*overflow:hidden;*/
+}
+.zDialog-body{
+    color:#666;
+    font-size:12px;
+    /*padding:15px;*/
+    text-align:left;
+    word-break:break-all;
+    word-wrap:break-word;
+    /*overflow: auto;*/
+}
+.zDialog-footer{
+	height:44px;
+	line-height:44px;
+    overflow:hidden;
+    position:relative;
+    border-top:1px solid #ccc;
+	text-align:center;
+	background:url(images/footerBg.png) repeat-x;
+}
+.zDialog-footer .zDialog-btn{
+	background-color: #f2f2f2;
+    color: #000;
+    border: 1px solid #ccc;
+    height: 27px;
+    padding: 0 25px;
+    line-height: 25px;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+.zDialog-footer .zDialog-btn.sure{
+	background-position: 0 -25px;
+    color: #fff;
+	border:none;
+    background: -ms-linear-gradient(top, #f59532, #f70707);
+    background: -moz-linear-gradient(top,#f59532,#f70707);
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#f59532), to(#f70707));
+}
+.zDialog-show .zDialog-overlay {
+	opacity:0.5;
+ 	filter:alpha(opacity=50);
+}
+.zDialog-show .zDialog-content {
+	opacity: 1;
+	filter: alpha(opacity=100);
+}
+.zDialog-show .opacity{
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+/* maximize/original */
+.zDialog-content.maximize{
+	width:100%;height:100%;
+}
+
+/* position style */
+.zDialog-content.right-bottom{
+	bottom:10px;
+	right:10px;
+	left:auto;
+	top:auto;
+}
+.zDialog-content.right-top{
+	right:10px;
+	left:auto;
+	top:10px;
+}
+.zDialog-content.left-bottom{
+	bottom:10px;
+	left:10px;
+	top:auto;
+}
+.zDialog-content.left-top{
+	left:10px;
+	top:10px;
+}
+
+/* zDialog-type */
+.zDialog-popup,.zDialog-tips{
+	border:1px solid #d5d5d6;
+	border-radius:0;
+	box-shadow:0 0 15px #ccc;
+}
+
+
+/* theme Style */
+.blue .zDialog-header{
+	background:#1c92ff;
+	color:#fff;
+	height:30px;
+	line-height:30px;
+	font-size:14px;
+}
+.blue .zDialog-content{
+	background-color:#f3f3f3;
+	border-radius:0;
+}
+.black .zDialog-header{
+	background:url(images/headerBlackBg.png) repeat-x;
+	color:#fff;
+}
+
+.zDialog-alert .zDialog-body,.zDialog-confirm .zDialog-body,.zDialog-tips .zDialog-body{padding:20px;}

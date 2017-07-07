@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>导航插件演示</title>
+		<link rel="stylesheet" href="zDialog.css">
+		<script src="../../../lib/jquery-1.11.1.min.js"></script>
+		<script src="zDialog.js"></script>
+		<style>
+			html,body{width:100%;height:100%;margin:0;padding:0}
+		</style>
+	</head>
+	<body>
+		<a id="testDialog">点击弹出测试</a>
+		<script>
+			
+			$("#testDialog").click(function(){
+				/*$.zDialog({
+					type:"alert",
+					theme:"black",
+					position:"left-bottom",
+					overlayClose:true,
+					url:"page.html",
+					showTools:true,
+					content:"这是测试环境看电视付款好的尽快回复即可大后方健康的",
+					move:true,
+					btn:[{
+						text:"确定",
+						click:function(form){
+							$("#dgdf",form)
+						}
+					}],
+					onInit:function(){
+						
+					},
+					onClose:function(){
+						console.log("已经关闭！")
+					}
+				});*/
+				
+				$.zTips({
+					content:"dsfdfdf"
+				})
+			})
+		</script>
+	</body>
+</html>
