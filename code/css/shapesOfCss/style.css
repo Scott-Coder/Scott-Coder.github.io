@@ -26,3 +26,10 @@ style {
 	margin:10px 0 10px 0;
     position: relative;
 }
+.shape > h2 > a {
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    font-size: 20px;
+	color:red;
+}
