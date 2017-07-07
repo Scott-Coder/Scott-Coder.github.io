@@ -1,0 +1,64 @@
+<div id="cityList">
+	<ul class="cityNameList">
+		
+	</ul>
+</div>
+<script rel="script">
+    define(function(require){
+        var base = require("Base");
+        return base.extend({
+			onInit : function(options){
+				this.buildCityList();
+			},
+			buildCityList : function(){
+				if(!S.cityCenter) return;
+				if(S.cityCenter){
+					
+					var buildCityItem = function(cityNames){
+						
+					}
+					// 直辖市
+					var municipalities = $("<li>直辖市：</li>");
+					$.each(S.cityCenter.municipalities,function(index,item){
+						var cityItem = $("<span>"+item.name+"</span>");
+						cityItem.data(item);
+						municipalities.append(cityItem);
+					})
+					$(".cityNameList").append(municipalities);
+					
+					// 省份
+					$.each(S.cityCenter.provinces,function(index,item){
+						var provincesItem = $("<li></li>");
+						var provincesName = $("<div class='provincesName'>"+item.name+"：</div>");
+						provincesName.data({
+							name : item.name,
+							geo : item.geo
+						});
+						provincesItem.append(provincesName);
+						if(item.cities && item.cities.length>0){
+							var provincesCities = $("<div class='provincesCities'></div>");
+							$.each(item.cities,function(i,k){
+								var cityItem = $("<span>"+k.name+"</span>");
+								cityItem.data(k);
+								provincesCities.append(cityItem);
+							})
+							provincesItem.append(provincesCities);
+						}
+						$(".cityNameList").append(provincesItem);
+					})
+					
+					// 其他
+					var other = $("<li>其他：&nbsp;&nbsp;</li>");
+					$.each(S.cityCenter.other,function(index,item){
+						var cityItem = $("<span>"+item.name+"</span>");
+						cityItem.data(item);
+						other.append(cityItem);
+					})
+					$(".cityNameList").append(other);
+				}
+				
+				
+			}
+		})
+	})
+</script>
